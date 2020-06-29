@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Emergency SMS</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/main.css') }}">
+    </head>
+<body>
+<div id="app" class="container">
+
+<h1>Emergency SMS</h1>
+{% for flash_message in get_flashed_messages() %}
+    <div class="flash">{{ flash_message }}</div>
+{% endfor %}
+
+<h2> Recent Sent Messages </h2>
+<div class="content">
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message.body }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+<h2> Send a Message </h2>
+<form method="post" action="/add-msg" class="main-form" id="msg-form">
+    <div class="form-row">
+      <label for="sender">
+        Your Name
+        <input type="text" placeholder="Name" name="sender"  />
+      </label>
+      
+      <label for="to">
+        Number of receiver
+        <input type="tel" placeholder="+123456789" name="to" />
+      </label>
+    </div>
+  
+    <div class="form-row">
+      <label for="msg">
+        Your Message
+        <input type="text" id="msg_txt" placeholder="Write your message here" name="msg" />
+      </label>
+    </div>
+</form>
+<button
+  form="msg-form"
+  class="msg-button"
+>
+  Send Your Message
+</button>
+
+</div>
+</body>
+</html>
