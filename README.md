@@ -28,5 +28,6 @@ Update the `.env` and with your [Twilio](https://twilio.com) credentials.
 * `flask run`
 <br/>Open the link that flask generates
 
+[Screenshot](https://github.com/abelathomas/Emergency-SMS-Sender/blob/master/dsp.jpg)
 
 This application was inspired by an 'Intro to API course' by Dennis Craig 
